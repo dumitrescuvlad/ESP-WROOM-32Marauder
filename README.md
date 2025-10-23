@@ -60,26 +60,23 @@ All wiring has been verified and tested to work with the official **ESP32 Maraud
 
 ---
 
-## 🧱 Wiring Diagram
+## Wiring Diagram
 
 ### ESP32 WROOM-32 Pinout
 
-![ESP32 Pinout](<img width="622" height="432" alt="2" src="https://github.com/user-attachments/assets/de4f2a72-775c-4a09-82c1-2f01d2103000" />
-)
+![ESP32 Pinout](https://imgur.com/RaIseSb)
 
 ### TFT Display (ILI9341)
 
-![TFT Back Pins](<img width="1000" height="608" alt="3" src="https://github.com/user-attachments/assets/0065d9ea-121e-4cf0-9cdc-107a3c24db3c" />
-)
+![TFT Back Pins](https://imgur.com/BHhOXux)
 
 ### Final Build Example
 
-![Final Build](![1](https://github.com/user-attachments/assets/3c45f121-8e1d-4586-9d1c-dfa3794eca62)
-)
+![Final Build](https://imgur.com/zjWNWWo)
 
 ---
 
-## ⚙️ Firmware Flashing
+## Firmware Flashing
 
 1. Clone this repository:
    ```bash
@@ -94,7 +91,7 @@ All wiring has been verified and tested to work with the official **ESP32 Maraud
 
 ---
 
-## 🧭 Notes
+## Notes
 
 - Make sure to use **3.3V logic** — the display is *not* 5V-tolerant.
 - If your screen stays white, double-check **CS, DC, RESET** pin mappings in `TFT_eSPI/User_Setup.h`.
@@ -106,13 +103,13 @@ All wiring has been verified and tested to work with the official **ESP32 Maraud
 
 ---
 
-## 🙌 Credits
+## Credits
 
 - Original project: [ESP32 Marauder by JustCallMeKoko](https://github.com/justcallmekoko/ESP32Marauder)
 - Adapted wiring and documentation: *https://github.com/dumitrescuvlad*
 
 ---
 
-## 🧰 License
+## License
 
 MIT License – see [LICENSE](LICENSE) for details.
