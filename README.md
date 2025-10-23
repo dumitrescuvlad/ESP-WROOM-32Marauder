@@ -1,28 +1,118 @@
-<!---[![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/justcallmekoko/ESP32Marauder/blob/master/LICENSE)--->
-<!---[![Gitter](https://badges.gitter.im/justcallmekoko/ESP32Marauder.png)](https://gitter.im/justcallmekoko/ESP32Marauder)--->
-<!---[![Build Status](https://travis-ci.com/justcallmekoko/ESP32Marauder.svg?branch=master)](https://travis-ci.com/justcallmekoko/ESP32Marauder)--->
-<!---Shields/Badges https://shields.io/--->
+# ESP32 Marauder – WROOM-32 + ILI9341 Build
 
-# ESP32 Marauder
-<p align="center"><img alt="Marauder logo" src="https://github.com/justcallmekoko/ESP32Marauder/blob/master/pictures/marauder_skull_patch_04_full_final.png?raw=true" width="300"></p>
-<p align="center">
-  <b>A suite of WiFi/Bluetooth offensive and defensive tools for the ESP32</b>
-  <br><br>
-  <a href="https://github.com/justcallmekoko/ESP32Marauder/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/mashape/apistatus.svg"></a>
-  <a href="https://gitter.im/justcallmekoko/ESP32Marauder"><img alt="Gitter" src="https://badges.gitter.im/justcallmekoko/ESP32Marauder.png"/></a>
-  <a href="https://github.com/justcallmekoko/ESP32Marauder/releases/latest"><img src="https://img.shields.io/github/downloads/justcallmekoko/ESP32Marauder/total" alt="Downloads"/></a>
-  <br>
-  <a href="https://twitter.com/intent/follow?screen_name=jcmkyoutube"><img src="https://img.shields.io/twitter/follow/jcmkyoutube?style=social&logo=twitter" alt="Twitter"></a>
-  <a href="https://www.instagram.com/just.call.me.koko"><img src="https://img.shields.io/badge/Follow%20Me-Instagram-orange" alt="Instagram"/></a>
-  <br><br>
-</p>
-    
-[![Build and Push](https://github.com/justcallmekoko/ESP32Marauder/actions/workflows/build_push.yml/badge.svg)](https://github.com/justcallmekoko/ESP32Marauder/actions/workflows/build_push.yml)
+A fork of [justcallmekoko/ESP32Marauder](https://github.com/justcallmekoko/ESP32Marauder) adapted for the **ESP32-WROOM-32** and a **3.2" ILI9341 SPI TFT display**.
 
-## Getting Started
-Download the [latest release](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) of the firmware.  
+This setup uses the standard ESP32 DevKit v1 pin layout and supports Wi-Fi, Bluetooth, GPS (optional), and device tools directly on the touchscreen interface.
 
-Check out the project [wiki](https://github.com/justcallmekoko/ESP32Marauder/wiki) for a full overview of the ESP32 Marauder
+---
 
-# For Sale Now
-You can buy the ESP32 Marauder using [this link](https://www.justcallmekokollc.com)
+## Overview
+
+This guide shows how to connect a **3.2" TFT SPI ILI9341 display with touch and SD slot** to an **ESP32-WROOM-32** board.
+
+All wiring has been verified and tested to work with the official **ESP32 Marauder firmware**.
+
+---
+
+## Hardware Setup
+
+| Component | Description |
+|------------|--------------|
+| **MCU** | ESP32-WROOM-32 DevKit v1 |
+| **Display** | 3.2" TFT LCD (ILI9341 Driver, XPT2046 Touch, SD Card) |
+| **Interface** | SPI |
+| **Resolution** | 240x320 px |
+
+---
+
+## Pin Connections
+
+| TFT Pin | Function | ESP32 GPIO |
+|----------|-----------|-------------|
+| `VCC` | Power | 3.3V |
+| `GND` | Ground | GND |
+| `CS` | Chip Select (TFT) | GPIO 15 |
+| `RESET` | Reset | GPIO 4 |
+| `DC` | Data/Command | GPIO 2 |
+| `SDI (MOSI)` | SPI Data | GPIO 23 |
+| `SCK` | SPI Clock | GPIO 18 |
+| `SDO (MISO)` | SPI MISO | GPIO 19 |
+| `LED` | Backlight | 3.3V (or GPIO 21 if PWM dimming desired) |
+
+### Touch
+
+| Touch Pin | Function | ESP32 GPIO |
+|------------|-----------|-------------|
+| `T_IRQ` | Touch Interrupt | GPIO 36 |
+| `T_DO` | MISO | GPIO 19 |
+| `T_DIN` | MOSI | GPIO 23 |
+| `T_CS` | Chip Select | GPIO 22 |
+| `T_CLK` | Clock | GPIO 18 |
+
+### SD Card (Optional)
+
+| SD Pin | Function | ESP32 GPIO |
+|---------|-----------|-------------|
+| `SD_CS` | Chip Select | GPIO 5 |
+| `SD_MOSI` | Data In | GPIO 23 |
+| `SD_MISO` | Data Out | GPIO 19 |
+| `SD_SCK` | Clock | GPIO 18 |
+
+---
+
+## 🧱 Wiring Diagram
+
+### ESP32 WROOM-32 Pinout
+
+![ESP32 Pinout](<img width="622" height="432" alt="2" src="https://github.com/user-attachments/assets/de4f2a72-775c-4a09-82c1-2f01d2103000" />
+)
+
+### TFT Display (ILI9341)
+
+![TFT Back Pins](<img width="1000" height="608" alt="3" src="https://github.com/user-attachments/assets/0065d9ea-121e-4cf0-9cdc-107a3c24db3c" />
+)
+
+### Final Build Example
+
+![Final Build](![1](https://github.com/user-attachments/assets/3c45f121-8e1d-4586-9d1c-dfa3794eca62)
+)
+
+---
+
+## ⚙️ Firmware Flashing
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/ESP32Marauder.git
+   ```
+2. Open the project in **Arduino IDE** or **PlatformIO**.
+3. Select:
+   - **Board:** ESP32 Dev Module  
+   - **Partition Scheme:** Huge APP (3MB)
+4. Flash the firmware.
+5. Connect via serial (115200 baud) or view the on-screen UI.
+
+---
+
+## 🧭 Notes
+
+- Make sure to use **3.3V logic** — the display is *not* 5V-tolerant.
+- If your screen stays white, double-check **CS, DC, RESET** pin mappings in `TFT_eSPI/User_Setup.h`.
+- The ILI9341 driver must be enabled:
+  ```cpp
+  #define ILI9341_DRIVER
+  ```
+- For touch input (XPT2046), verify that `T_CS` and `T_IRQ` match your wiring.
+
+---
+
+## 🙌 Credits
+
+- Original project: [ESP32 Marauder by JustCallMeKoko](https://github.com/justcallmekoko/ESP32Marauder)
+- Adapted wiring and documentation: *https://github.com/dumitrescuvlad*
+
+---
+
+## 🧰 License
+
+MIT License – see [LICENSE](LICENSE) for details.
