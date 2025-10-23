@@ -63,16 +63,19 @@ All wiring has been verified and tested to work with the official **ESP32 Maraud
 ## Wiring Diagram
 
 ### ESP32 WROOM-32 Pinout
-
-![ESP32 Pinout](https://imgur.com/RaIseSb)
+<p align="center">
+  <img src="https://i.imgur.com/RaIseSb.png" width="640" alt="ESP32 Pinout">
+</p>
 
 ### TFT Display (ILI9341)
-
-![TFT Back Pins](https://imgur.com/BHhOXux)
+<p align="center">
+  <img src="https://i.imgur.com/zjWNWWo.jpeg" width="640" alt="ESP32 Pinout">
+</p>
 
 ### Final Build Example
-
-![Final Build](https://imgur.com/zjWNWWo)
+<p align="center">
+  <img src="https://i.imgur.com/BHhOXux.png" width="640" alt="ESP32 Pinout">
+</p>
 
 ---
 
