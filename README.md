@@ -69,12 +69,11 @@ All wiring has been verified and tested to work with the official **ESP32 Maraud
 
 ### TFT Display (ILI9341)
 <p align="center">
-  <img src="https://i.imgur.com/zjWNWWo.jpeg" width="640" alt="ESP32 Pinout">
+  <img src="https://i.imgur.com/BHhOXux.png" width="640" alt="ESP32 Pinout">
 </p>
-
 ### Final Build Example
 <p align="center">
-  <img src="https://i.imgur.com/BHhOXux.png" width="640" alt="ESP32 Pinout">
+  <img src="https://i.imgur.com/zjWNWWo.jpeg" width="640" alt="ESP32 Pinout">
 </p>
 
 ---
