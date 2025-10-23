@@ -83,7 +83,7 @@ All wiring has been verified and tested to work with the official **ESP32 Maraud
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/ESP32Marauder.git
+   git clone https://github.com/justcallmekoko/ESP32Marauder
    ```
 2. Open the project in **Arduino IDE** or **PlatformIO**.
 3. Select:
@@ -91,7 +91,8 @@ All wiring has been verified and tested to work with the official **ESP32 Maraud
    - **Partition Scheme:** Huge APP (3MB)
 4. Flash the firmware.
 5. Connect via serial (115200 baud) or view the on-screen UI.
-
+6. 
+Alternative: Flash through https://esptool.spacehuhn.com/
 ---
 
 ## Notes
